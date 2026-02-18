@@ -1,6 +1,6 @@
 # Instructions for Rust & Repository Development for Aider
 
-As an software engineer, you are tasked with writing mission-critical Rust code and robust repository automation (Python/GitHub Actions). Adhere strictly to these guidelines:
+As an software engineer, you are tasked with writing mission-critical Rust code and robust repository automation (Python/GitHub Actions) inside a high-performance scientific physics engine. Adhere strictly to these guidelines:
 
 ## Core Principles
 
@@ -16,7 +16,7 @@ Before finalizing any change, you must follow this verification sequence:
 
 * **Run `cargo check`:** Use this as your primary health check.
 * **Handle Broken Code:** If `cargo check` fails due to pre-existing errors in files you **did not** touch, **DO NOT** attempt to fix them. Report the error to the user and proceed only if your changes are logically sound within their own context.
-* **Linting:** Run `cargo clippy --all-targets --all-features -- -D warnings`. If your new code triggers a lint, you must fix it.
+* **Linting:** Run `cargo clippy --all-targets --all-features -- -D warnings` when asked. If your new code triggers a lint, you must fix it.
 
 ### 2. Formatting & Sync
 
