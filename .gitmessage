@@ -1,0 +1,18 @@
+# <type>: (If applied, this commit will...) <subject> (Max 50 chars)
+# |<----  Using a Maximum of 50 Characters  ---->|
+
+# Explain why this change is being made.
+# |<----   Try to limit each line to 72 characters   ---->|
+
+# Provide a detailed description of the change. 
+# Focus on "why" and "how," rather than "what" (the code shows the what).
+# If referencing other commits, use the 12-char hash.
+
+# --- BREAKING CHANGE ---
+# BREAKING CHANGE: <description of the breaking change>
+
+# --- FOOTER ---
+# Fixes: #123
+# See also: #456, #789
+# Relates to: #234
+# Co-authored-by: Name <email@example.com>
