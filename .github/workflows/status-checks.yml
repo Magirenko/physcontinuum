@@ -1,0 +1,102 @@
+name: CI - Code Status Checks
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  # --- STAGE 1: SECURITY & LINTING ---
+  security-audit:
+    name: Security & Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Install Cargo Audit
+        uses: taiki-e/install-action@cargo-audit
+      - name: Run Cargo Audit
+        run: cargo audit
+      - name: Gitleaks Scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  check-license:
+    name: License Compliance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: REUSE Compliance Check
+        uses: fsfe/reuse-action@v5
+
+  lint-python:
+    name: Python Lint (Ruff)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Ruff
+        run: pip install ruff
+      - name: Run Ruff
+        run: ruff check . && ruff format --check .
+
+  lint-configs:
+    name: Configs & Web (Prettier/Checkers)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install Node & Prettier
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install -g prettier
+
+      - name: Check Prettier (HTML, MD, YAML, JSON)
+        run: prettier --check "**/*.{html,md,yaml,yml,json}"
+
+      - name: Check TOML & INI
+        run: |
+          pip install toml-validator
+          find . -name "*.toml" | xargs toml-validator
+          pip install configupdater # can be used to validate ini structure
+
+  lint-rust:
+    name: Rust Lint (Fmt/Clippy)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2
+      - name: Check Formatting
+        run: cargo fmt --all -- --check
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets -- -D warnings
+
+  # --- STAGE 2: BUILD & TEST ---
+  build-and-test:
+    name: Build & Test
+    needs: [security-audit, lint-python, lint-rust, check-license, lint-configs]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2
+      - name: Cargo Check
+        run: cargo check --all-targets
+      - name: Run Tests
+        run: cargo test --workspace --all-features
