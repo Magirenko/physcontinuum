@@ -1,7 +1,6 @@
+.reuseignore
 target/
 .aider*
 LICENSES/
-**/target/*
-**/.aider*
 *.md
 Cargo.lock
