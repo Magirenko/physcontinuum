@@ -16,7 +16,7 @@ categories.workspace = true
 path = "src/lib.rs"
 
 [dependencies]
-thiserror = { version = "=2.0.11", default-features = false }
-bytemuck = { version = "=1.24.0", default-features = false, features = ["derive", "must_cast"] }
-tracing = { version = "=0.1.40", default-features = false, features = ["attributes"] }
-tracing-subscriber = { version = "=0.3.18", default-features = false, features = ["alloc", "registry", "fmt"] }
+thiserror = { version = "2.0.11", default-features = false }
+bytemuck = { version = "1.24.0", default-features = false, features = ["derive", "must_cast"] }
+tracing = { version = "0.1.40", default-features = false, features = ["attributes"] }
+tracing-subscriber = { version = "0.3.20", default-features = false, features = ["alloc", "registry", "fmt"] }
