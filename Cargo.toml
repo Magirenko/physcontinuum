@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Magirenko Technologies
+#
+# SPDX-License-Identifier: Apache-2.0
+
 [workspace]
 members = [
     "crates/*",
@@ -17,3 +21,4 @@ categories = ["science", "simulation"]
 description = "A high-performance, modular physics workspace for Newtonian and Relativistic rigid-body dynamics."
 
 [workspace.dependencies]
+physcontinuum-core = { path = "crates/physcontinuum-core" }
