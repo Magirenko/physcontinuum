@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2026 Magirenko Technologies
+#
+# SPDX-License-Identifier: Apache-2.0
+
+[workspace]
+members = [
+    "crates/*",
+]
+
+# Shared resolver to ensure all crates use the same dependency versions
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Magirenko Technologies"]
+license = "Apache-2.0"
+repository = "https://github.com/Magirenko/physcontinuum"
+keywords = ["physics", "simulation", "deterministic", "portable", "multibody"]
+categories = ["science", "simulation"]
+description = "A high-performance, modular physics workspace for Newtonian and Relativistic rigid-body dynamics."
+
+[workspace.dependencies]
+physcontinuum-core = { path = "crates/physcontinuum-core" }
