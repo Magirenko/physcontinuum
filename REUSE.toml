@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2026 Magirenko Technologies
+#
+# SPDX-License-Identifier: Apache-2.0
+
+version = 1
+SPDX-PackageName = "PhysContinuum Engine"
+SPDX-PackageDownloadLocation = "https://github.com/Magirenko/physcontinuum"
+
+[[annotations]]
+path = [".gitignore", ".gitmessage", "**.md", "**.txt"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Magirenko Technologies"
+SPDX-License-Identifier = "Apache-2.0"
