@@ -7,7 +7,7 @@ SPDX-PackageName = "PhysContinuum Engine"
 SPDX-PackageDownloadLocation = "https://github.com/Magirenko/physcontinuum"
 
 [[annotations]]
-path = [".gitignore", ".reuseignore", ".gitmessage", "**.md", "**.txt"]
+path = [".gitignore", ".reuseignore", "Cargo.lock", ".gitmessage", "**.md", "**.txt"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Magirenko Technologies"
 SPDX-License-Identifier = "Apache-2.0"

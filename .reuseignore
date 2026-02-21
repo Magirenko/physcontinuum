@@ -4,3 +4,4 @@ LICENSES/
 **/target/*
 **/.aider*
 *.md
+Cargo.lock
