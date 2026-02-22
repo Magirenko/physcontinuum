@@ -1,6 +1,6 @@
 # PhysContinuum Engine: A Scientific Physics Simulation Framework
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Magirenko/physcontinuum/status-checks.yml?branch=main&style=flat-square&label=build%20%26%20audit&logo=githubactions&logoColor=white)](https://github.com/Magirenko/physcontinuum/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Magirenko/physcontinuum/scheduled-checks.yml?branch=main&style=flat-square&label=build%20%26%20audit&logo=githubactions&logoColor=white)](https://github.com/Magirenko/physcontinuum/actions)
 ![Status](https://img.shields.io/badge/status-work--in--progress-yellow?style=flat-square&logo=gitbook&logoColor=white)
 [![Rust Version](https://img.shields.io/badge/rust-1.85%2B-93450a?style=flat-square&logo=rust&logoColor=white)](https://github.com/Magirenko/physcontinuum)
 [![License](https://img.shields.io/badge/license-Apache--2.0-333333?style=flat-square&logo=apache&logoColor=white)](https://opensource.org/licenses/Apache-2.0)
