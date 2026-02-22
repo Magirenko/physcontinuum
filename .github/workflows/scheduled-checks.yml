@@ -1,0 +1,8 @@
+on:
+  schedule:
+    - cron: '0 */8 * * *'
+
+jobs:
+  trigger-logic:
+    uses: ./.github/workflows/status-checks.yml
+    secrets: inherit
