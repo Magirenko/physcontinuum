@@ -7,10 +7,9 @@ name: CI - Code Status Checks Every 8 Hours
 on:
   schedule:
     - cron: "0 */8 * * *"
-  workflow_call:
+  workflow_dispatch:
 
 permissions:
-  security-events: write
   contents: read
 
 jobs:
