@@ -9,16 +9,16 @@ PhysContinuum Engine is a high-fidelity, non-real-time physics engine implemente
 
 ## Development Status: Work in Progress (WIP)
 
-**Note:** This project is currently in an early alpha stage of development. While the repository structure and CI/CD pipelines are established, the core physics solvers and integration sub-systems are currently under active implementation. 
+**Note:** This project is currently in an early alpha stage of development. While the repository structure and CI/CD pipelines are established, the core physics solvers and integration sub-systems are currently under active implementation.
 
 The current version (v0.1.0) contains the architectural boilerplate and library definitions; however, functional simulation capabilities are not yet available for production or research use.
 
 ## Core Objectives
 
-* **Numerical Precision:** Implementation of high-order integration schemes to minimize local truncation errors.
-* **Temporal Stability:** Designed to handle stiff differential equations and long-duration simulations without significant energy drift.
-* **Determinism:** Strict adherence to reproducible results across various hardware architectures.
-* **Extensibility:** A modular architecture allowing for custom force fields, constraint solvers, and material properties.
+- **Numerical Precision:** Implementation of high-order integration schemes to minimize local truncation errors.
+- **Temporal Stability:** Designed to handle stiff differential equations and long-duration simulations without significant energy drift.
+- **Determinism:** Strict adherence to reproducible results across various hardware architectures.
+- **Extensibility:** A modular architecture allowing for custom force fields, constraint solvers, and material properties.
 
 ## Contributing
 
