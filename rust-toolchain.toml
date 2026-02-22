@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Magirenko Technologies
+#
+# SPDX-License-Identifier: Apache-2.0
+
+[toolchain]
+channel = "1.85.0"
+components = ["rustfmt", "clippy", "rust-src"]
+profile = "minimal"
