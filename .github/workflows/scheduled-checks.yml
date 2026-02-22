@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 Magirenko Technologies
+#
+# SPDX-License-Identifier: Apache-2.0
+
+name: CI - Code Status Checks Every 8 Hours
+
+on:
+  schedule:
+    - cron: "0 */8 * * *"
+
+jobs:
+  trigger-logic:
+    uses: ./.github/workflows/status-checks.yml
+    secrets: inherit
