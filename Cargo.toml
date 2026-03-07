@@ -21,7 +21,7 @@ categories = ["science", "simulation"]
 description = "A high-performance, modular physics workspace for Newtonian and Relativistic rigid-body dynamics."
 
 [workspace.dependencies]
-physcontinuum-core = { path = "crates/physcontinuum-core" }
+physcontinuum-core = { path = "crates/physcontinuum-core", version = "0.1.0" }
 
 [profile.release]
 opt-level = 2
